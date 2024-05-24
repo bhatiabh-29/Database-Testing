@@ -15,6 +15,8 @@ FROM employees
 GROUP BY emp_no
 HAVING COUNT(*) > 1;
 ```
+![alt text](image-3.png)
+
 
 ## 2. Entity Integrity Test
 
@@ -28,6 +30,7 @@ SELECT dept_no
 FROM departments
 WHERE dept_no NOT IN (SELECT dept_no FROM dept_emp);
 ```
+![alt text](image-4.png)
 
 ## 3. Domain Integrity Test
 
@@ -43,6 +46,9 @@ FROM employees
 WHERE birth_date NOT BETWEEN '1900-01-01' AND CURDATE();
 
 ```
+![alt text](image-5.png)
+
+
 ## 4. User-Defined Integrity Test 
 
 **Objective**: Ensure all `birth_date` values are within the defined range.
@@ -57,3 +63,4 @@ SELECT emp_no, birth_date, hire_date
 FROM employees
 WHERE hire_date <= birth_date;
 ```
+![alt text](image-6.png)
